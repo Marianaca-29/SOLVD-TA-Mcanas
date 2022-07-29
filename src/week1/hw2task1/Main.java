@@ -1,5 +1,6 @@
 package week1.hw2task1;
 
+// see UML https://drive.google.com/file/d/1PD01w99AhtCF7aPFwHco0BGjUgzjX3BR/view?usp=sharing
 public class Main {
     public static void main(String[] args) {
 

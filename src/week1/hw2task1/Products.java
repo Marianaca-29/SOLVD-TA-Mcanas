@@ -1,6 +1,7 @@
 package week1.hw2task1;
 
 // I made the parent class abstract
+// Remember: Abstract class must have at least one asbtract method
 
 public abstract class Products {
 
@@ -45,7 +46,8 @@ public abstract class Products {
     //public void setPrice(Double price) { this.price = price;
     // } is never used
 
-    //methods
+    // methods
+    // this is the abstract method: it does not make any action
 
     public abstract Double calculatePrice();
 

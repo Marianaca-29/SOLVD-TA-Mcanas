@@ -5,13 +5,17 @@ import java.util.List;
 
 public class Cart {
 
+    //Using array list class
+    // Remember is resizable
     private List<Products> listproducts;
 
+    // Creating an object ArrayList
     public Cart() {
         listproducts = new ArrayList<Products>();
     }
 
 
+    //adding the list of products to cart
     public void showCart() {
         for (Products item : listproducts) {
             item.toString();
@@ -23,6 +27,7 @@ public class Cart {
 
     }
 
+    // mtehod to calculate total amount of products in the cart
     public Double totalAmount() {
         Double sumTotal = 0.0;
 

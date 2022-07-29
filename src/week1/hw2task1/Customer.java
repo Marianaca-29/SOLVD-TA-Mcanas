@@ -3,10 +3,10 @@ package week1.hw2task1;
 public class Customer {
 
     // fields
-    private String name;
-    private String lastname;
-    private int idCostumer;
-    private Cart cart;
+    private final String name;
+    private final String lastname;
+    private final int idCostumer;
+    private final Cart cart;
 
     //Constructor
 
