@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class PersonalCare extends Products{
+public class PersonalCare extends Product {
 
     // fields
     private Boolean safety;

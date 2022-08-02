@@ -1,6 +1,6 @@
-package week1.hw1task3;
+package homework1;
 
-public class InsertionSortExample {
+public class Task3V2 {
     public static void insertionSort(int[] array) {
         // up to here we have integer to return as an array
 

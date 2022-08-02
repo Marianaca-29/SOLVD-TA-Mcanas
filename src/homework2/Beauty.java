@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class Beauty extends Products{
+public class Beauty extends Product {
 
     //fields
 
@@ -19,6 +19,7 @@ public class Beauty extends Products{
 
     @Override
     public Double calculatePrice() {
+
         return null;
     }
 }

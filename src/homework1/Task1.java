@@ -1,4 +1,4 @@
-package week1.hw1task1;
+package homework1;
 
 //1) Task 1
 //Create simple java class with main method that prints some text.

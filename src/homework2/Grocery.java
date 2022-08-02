@@ -1,27 +1,23 @@
-package week1.hw2task1;
+package homework2;
 
-public class Beverages extends Products {
+public class Grocery extends Product {
 
     private Boolean refrigerated;
     private String ingredientType;
 
-    //constructor
+//constructor
 
-    public Beverages(String name, String description, Double weight, Double price, Boolean refrigerated, String ingredientType) {
+
+    public Grocery(String name, String description, Double weight, Double price, Boolean refrigerated, String ingredientType) {
         super(name, description, weight, price);
         this.refrigerated = refrigerated;
         this.ingredientType = ingredientType;
     }
 
-
-    //
     @Override
     public Double calculatePrice() {
 
-        return getPrice();
+        return price() * weight();
     }
 
-
 }
-
-

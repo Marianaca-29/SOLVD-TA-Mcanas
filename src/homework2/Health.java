@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class Health extends Products{
+public class Health extends Product implements Insurance {
 
     // fields
     private Boolean safety;
@@ -16,6 +16,13 @@ public class Health extends Products{
     // implementing methods
     @Override
     public Double calculatePrice() {
-        return null;
+
+        return price();
+    }
+
+    public double addInsurance(double percentage) {
+        double insuranceAdded = getPrice() * percentage;
+        setPrice(getPrice() + insuranceAdded);
+        return insuranceAdded;
     }
 }

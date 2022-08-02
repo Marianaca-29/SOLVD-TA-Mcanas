@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class HouseHold extends Products{
+public class HouseHold extends Product {
 
     // fields
     private Boolean safety;
@@ -18,6 +18,7 @@ public class HouseHold extends Products{
 
     @Override
     public Double calculatePrice() {
+
         return calculatePrice();
     }
 }

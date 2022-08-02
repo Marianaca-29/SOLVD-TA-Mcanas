@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class BodyCare extends Products{
+public class BodyCare extends Product {
 
     // fields
     private Boolean hypoalergenic;
@@ -14,6 +14,7 @@ public class BodyCare extends Products{
 
     @Override
     public Double calculatePrice() {
+
         return calculatePrice();
     }
 }

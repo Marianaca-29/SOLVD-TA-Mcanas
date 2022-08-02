@@ -1,6 +1,6 @@
-package week1.hw2task1;
+package homework2;
 
-public class Pets extends Products{
+public class Pet extends Product {
 
     //fields
     private Boolean typePet;
@@ -8,7 +8,7 @@ public class Pets extends Products{
     //constructor
 
 
-    public Pets(String name, String description, Double weight, Double price, Boolean typePet) {
+    public Pet(String name, String description, Double weight, Double price, Boolean typePet) {
         super(name, description, weight, price);
         this.typePet = typePet;
     }

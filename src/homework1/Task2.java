@@ -1,4 +1,4 @@
-package week1.hw1task2;
+package homework1;
 //2) Task 2
 //You have array of numbers [3, 7, 6, 13, 33, 9, -100, 25]
 //Print all the values of array using while loop.

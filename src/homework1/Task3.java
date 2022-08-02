@@ -1,11 +1,11 @@
-package week1.hw1task3;
+package homework1;
 //3) Task 3
 //You have array of numbers [3, 7, 6, 13, 33, 9, -100, 25]
 //Sort this array using one of sorting algorithms: Insertion sort, Selection sort, Bubble sort.
 //You need to understand idea of each this method but use only one for implementation
 //Mariana Canas: Insertion sort
 
-public class InsertionSort {
+public class Task3 {
 
     void sortArray(int arr[]) {
         int n = arr.length;
@@ -32,7 +32,7 @@ public class InsertionSort {
     public static void main(String args[]) {
         int arr[] = {3, 7, 6, 13, 33, 9, -100, 25};
 
-        InsertionSort arrayOfNumbers = new InsertionSort();
+        Task3 arrayOfNumbers = new Task3();
         arrayOfNumbers.sortArray(arr);
 
         printArray(arr);
