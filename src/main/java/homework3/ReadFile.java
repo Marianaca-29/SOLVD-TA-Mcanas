@@ -11,7 +11,7 @@ public class ReadFile {
 
     public static void main(String args[]) throws FileNotFoundException {
 
-        File f = new File("src/main/java/homework3/terms.txt");
+        File f = new File("src/main/resources/terms.txt");
         ArrayList arr = new ArrayList();
         HashMap<String, Integer> listOfWords = new HashMap<String, Integer>();
         Scanner in = new Scanner(f);
@@ -34,7 +34,7 @@ public class ReadFile {
         System.out.println("The number of unique words: " + uniqueValues.size());
 
         //Instantiating the File class
-        File file = new File("src/main/java/homework3/rewrite.txt");
+        File file = new File("src/main/resources/rewrite.txt");
         //Instantiating the PrintStream class
         PrintStream standard = System.out;
         PrintStream stream = new PrintStream(file);
