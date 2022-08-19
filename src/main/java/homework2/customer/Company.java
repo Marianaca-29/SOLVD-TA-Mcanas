@@ -26,7 +26,7 @@ public class Company extends Customer {
     @Override
     public void showCustomerDetails() {
 
-        logger.error("The Consumer is: " + name + " " + lastname + " " + ", idCostumer: " + idCostumer + taxNumberId + "");
+        logger.info("The Consumer is: " + name + " " + lastname + " " + ", idCostumer: " + idCostumer + taxNumberId + "");
     }
 
 }

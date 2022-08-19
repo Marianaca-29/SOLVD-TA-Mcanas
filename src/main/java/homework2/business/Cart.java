@@ -35,7 +35,7 @@ public class Cart {
     public void showCart() {
         for (Product item : listProduct) {
             item.toString();
-            logger.error(item.toString());
+            logger.info(item.toString());
         }
 
     }

@@ -37,7 +37,7 @@ public class Consumer extends Customer {
 
     @Override
     public void showCustomerDetails() {
-        logger.error("The Consumer is: " + name + " " + lastname + " " + "idCostumer: " + idCostumer + ", is part of Fidelity Program: " + fidelityProgram);
+        logger.info("The Consumer is: " + name + " " + lastname + " " + "idCostumer: " + idCostumer + ", is part of Fidelity Program: " + fidelityProgram);
         //+ ", bday : " + dayBirth + " " + monthBirth + " " + yearBirth
     }
 

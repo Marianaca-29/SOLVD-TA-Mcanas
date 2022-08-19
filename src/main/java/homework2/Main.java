@@ -103,10 +103,10 @@ public class Main {
 
         //this shows the cart and it's products (product to String and sow cart)
         cart1.showCart();
-        logger.error("Total amount of the current cart: " + shop1.calculateAmountForCustomer(consumer1));
+        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(consumer1));
 
         cart2.showCart();
-        logger.error("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
+        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
 
         // linked list
         LinkedList list = new LinkedList();

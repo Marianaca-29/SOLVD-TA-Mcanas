@@ -52,7 +52,7 @@ public class Pet extends Product implements IInsurance, ITaxation {
         if (percentage <= 10) {
             price = taxationCalculated;
         } else {
-            logger.error("The percentage of taxation is not allowed ");
+            logger.info("The percentage of taxation is not allowed ");
 
         }
     }

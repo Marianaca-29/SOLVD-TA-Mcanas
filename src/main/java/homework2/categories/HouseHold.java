@@ -48,7 +48,7 @@ public class HouseHold extends Product implements ITaxation {
         if (percentage <= 10) {
             price = taxationCalculated;
         } else {
-            logger.error("The percentage of taxation is not allowed ");
+            logger.info("The percentage of taxation is not allowed ");
 
         }
     }
