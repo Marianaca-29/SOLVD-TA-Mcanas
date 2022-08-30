@@ -14,8 +14,10 @@ import homework2.customer.Consumer;
 import homework2.exceptions.CustomerException;
 import homework2.exceptions.DateException;
 import homework2.exceptions.PriceException;
+import homework2.lambdas.StringFunction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class.getName());
@@ -106,7 +108,7 @@ public class Main {
         logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(consumer1));
 
         cart2.showCart();
-        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
+        logger.error("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
 
         // linked list
         LinkedList list = new LinkedList();
@@ -115,6 +117,19 @@ public class Main {
         list = LinkedList.insert(list, "Final prices do not include Packaging ");
         LinkedList.printList(list);
 
+
+        StringFunction asking = (s) -> s + "?";
+        StringFunction answering = (s) -> s + "!";
+        StringFunction saying = (s) -> s + "!";
+
+        printFormatted("Is there anything you would like to add", asking);
+        printFormatted("no", answering);
+        printFormatted("There isn't anything you would like to add, Have a Nice Day", saying);
+    }
+
+    public static void printFormatted(String str, StringFunction format) {
+        String result = format.run(str);
+        System.out.println(result);
     }
 
 

@@ -46,12 +46,12 @@ public class LinkedList {
     public static void printList(LinkedList list) {
         Node currNode = list.head;
 
-        System.out.print("LinkedList: ");
+        System.out.println("LinkedList: ");
 
         // Traverse through the LinkedList
         while (currNode != null) {
             // Print the data at current node
-            System.out.print(currNode.data + " ");
+            System.out.println(currNode.data + " ");
 
             // Go to next node
             currNode = currNode.next;

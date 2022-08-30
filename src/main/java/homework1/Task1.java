@@ -7,13 +7,9 @@ package homework1;
 
 public class Task1 {
     public static void main(String[] args) {
-        //String[] cars = new String[]{"Volvo", "BMW", "Ford", "Mazda"};
-        //System.out.println(cars[0]);
-        System.out.println("hello world");
+        for (String arg : args) {
 
-        int[] array1 = new int[]{1, 2, 3, 4};
-        System.out.println("The second number is " + Integer.toString(array1[1]));
-
-
+            System.out.println("Showing first element:  " + arg);
+        }
     }
 }
