@@ -17,25 +17,26 @@ public class CountingWords {
     private static final File file = new File("src/main/resources/maven.txt");
 
     public static void main(String[] args) throws IOException {
-        String text = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
+        String text = FileUtils.readFileToString(file, "UTF-8");
+        
 
         HashSet<String> set = new HashSet<>(Arrays.asList(text.split("")));
 
-        logger.info(text.split("").length + " words " + set.size() + " unique words");
-        int uniqueWordsCounter = 0;
+
+        int numberUniqueWords = 0;
 
         String[] words = text.split("[$&+,:;=?@#|'<>,^*()%!]| |[0-9]|\n", 0);
 
         for (String word : words) {
             if (!StringUtils.isBlank(word) && StringUtils.countMatches(text, word) == 1) {
-                uniqueWordsCounter++;
+                numberUniqueWords++;
             }
         }
 
         FileUtils.touch(new File("src/main/resources/outcome.txt"));
         File newfile = new File("src/main/resources/outcome.txt");
-        FileUtils.writeStringToFile(newfile, "Amount of unique words in this file: " + uniqueWordsCounter + "\n", "UTF-8");
-        logger.info("Unique words of this document are: " + uniqueWordsCounter);
+        FileUtils.writeStringToFile(newfile, "Amount of unique words in this file: " + numberUniqueWords + "\n", "UTF-8");
+        logger.info("Unique words of this document are: " + numberUniqueWords);
         // still trying to make it work, it does not work correctly
 
     }
