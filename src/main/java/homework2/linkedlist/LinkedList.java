@@ -3,36 +3,11 @@ package homework2.linkedlist;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 public class LinkedList<T> {
     private static Logger logger = LogManager.getLogger(LinkedList.class);
 
-    private Node head;
+    public Node<T> head;
 
-    class Node {
-        private T value;
-        private Node next;
-
-        private Node(T value) {
-            this.value = value;
-        }
-
-        public T getValue() {
-            return value;
-        }
-
-        public void setValue(T value) {
-            this.value = value;
-        }
-
-        public Node getNext() {
-            return next;
-        }
-
-        public void setNext(Node next) {
-            this.next = next;
-        }
-    }
 
     public void insert(T data) {
         Node newNode = new Node(data);
@@ -76,11 +51,10 @@ public class LinkedList<T> {
     public void display() {
         if (head != null) {
             Node currentNode = head;
-            while (currentNode.getNext() != null) {
-                logger.info(currentNode.getValue());
+            while (currentNode != null) {
+                logger.info(currentNode.getValue().toString());
                 currentNode = currentNode.getNext();
             }
-            logger.info(currentNode.getNext());
         }
     }
 

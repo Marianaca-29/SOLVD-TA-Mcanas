@@ -3,6 +3,7 @@ package homework2.business;
 import homework2.customer.Consumer;
 import homework2.customer.Customer;
 import homework2.linkedlist.LinkedList;
+import homework2.linkedlist.Node;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,10 +30,20 @@ public class Shop {
 
 
     // Methods
-// fidelity program method
-    public void addConsumerWF(LinkedList linkedList, Consumer consumer) {
-        if (consumer.fidelityProgram == true) {
-            linkedList.insert(consumer);
+    public LinkedList<Consumer> consumerwithfidelityp = new LinkedList<>();
+
+    // fidelity program method
+    public void addConsumerWF(Consumer consumer) {
+        if (consumer.fidelityProgram) {
+            consumerwithfidelityp.insert(consumer);
+        }
+    }
+
+    public void displayFidelity() {
+        Node<Consumer> algo = consumerwithfidelityp.head;
+        while (algo != null) {
+            logger.info(algo.getValue().getName());
+            algo = algo.getNext();
         }
     }
 

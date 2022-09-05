@@ -35,14 +35,17 @@ public class Consumer extends Customer {
         this.idCostumer = idCostumer;
     }
 
-    public boolean fidelityProgram() {
-        return fidelityProgram;
-    }
 
     @Override
     public void showCustomerDetails() {
         logger.info("The Consumer is: " + name + " " + lastname + " " + "idCostumer: " + idCostumer + ", is part of Fidelity Program: " + fidelityProgram);
         //+ ", bday : " + dayBirth + " " + monthBirth + " " + yearBirth
     }
+
+
+    public String getName() {
+        return super.name;
+    }
+
 
 }

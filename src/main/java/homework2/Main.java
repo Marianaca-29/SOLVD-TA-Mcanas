@@ -14,7 +14,6 @@ import homework2.customer.Consumer;
 import homework2.exceptions.CustomerException;
 import homework2.exceptions.DateException;
 import homework2.exceptions.PriceException;
-import homework2.linkedlist.LinkedList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -105,9 +104,9 @@ public class Main {
         // Creating customer and its details
 
         Consumer consumer1 = new Consumer("Sergei", "Zagriychuk", 1, true, 29, 10, 1990);
-        Consumer consumer2 = new Consumer("Sergei", "Zagriychuk", 1, true, 20, 11, 1992);
+        Consumer consumer2 = new Consumer("Andrei", "Zagriychuk", 1, true, 20, 11, 1992);
         Company company1 = new Company("Solvd", "inc", 2, "12345678910");
-        LinkedList<Consumer> consumerwithfidelityp = new LinkedList<>();
+
 
         //this shows the cart and it's products (product to String and sow cart)
         cart1.showCart();
@@ -117,14 +116,15 @@ public class Main {
         logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
 
         //Printed Likedlist of Customers attended this day
-        shop1.addConsumerWF(consumerwithfidelityp, consumer1);
-        shop1.addConsumerWF(consumerwithfidelityp, consumer2);
-        logger.info(consumerwithfidelityp.getCount());
-
+        shop1.addConsumerWF(consumer1);
+        shop1.addConsumerWF(consumer2);
+        logger.info(shop1.consumerwithfidelityp.getCount());
+        shop1.displayFidelity();
+        
         //lambdas calling
-        printFormatted("Is there anything you would like to add", asking);
-        printFormatted("no", answering);
-        printFormatted("There isn't anything you would like to add, Have a Nice Day", saying);
+        printFormatted(" Total amount is: ", asking);
+        printFormatted("So, will you pay with wich credit card? ", answering);
+        printFormatted("Have a Nice Day... ", saying);
     }
 
 
