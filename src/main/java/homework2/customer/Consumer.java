@@ -7,17 +7,17 @@ import org.apache.logging.log4j.Logger;
 
 public class Consumer extends Customer {
 
-    private Logger logger = LogManager.getLogger(Consumer.class.getSimpleName());
-    private Boolean fidelityProgram;
+    protected Logger logger = LogManager.getLogger(Consumer.class.getSimpleName());
+    public boolean fidelityProgram;
+    protected int dayBirth;
+    protected int monthBirth;
 
-    private int dayBirth;
-    private int monthBirth;
+    protected int yearBirth;
 
-    private int yearBirth;
-
-    public Consumer(String name, String lastname, int idCostumer, Boolean fidelityProgram, int dayBirth, int monthBirth, int yearBirth) throws DateException, CustomerException {
+    public Consumer(String name, String lastname, int idCostumer, boolean fidelityProgram, int dayBirth, int monthBirth, int yearBirth) throws DateException, CustomerException {
         super(name, lastname, idCostumer);
         this.fidelityProgram = fidelityProgram;
+
         if (dayBirth < 1 || dayBirth > 31) {
             throw new DateException("The day provided is not accurate");
         } else this.dayBirth = dayBirth;
@@ -33,6 +33,10 @@ public class Consumer extends Customer {
             this.lastname = lastname;
         } else throw new CustomerException("The name or lastname is too short: ");
         this.idCostumer = idCostumer;
+    }
+
+    public boolean fidelityProgram() {
+        return fidelityProgram;
     }
 
     @Override

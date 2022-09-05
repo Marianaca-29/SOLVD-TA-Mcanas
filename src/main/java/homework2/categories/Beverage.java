@@ -25,7 +25,7 @@ public class Beverage extends Product implements ITaxation {
     public Double calculatePrice() {
 
         if (refrigerated || natural) {
-            double productNat = price += FIX_AMOUNT;
+            double productNat = price + FIX_AMOUNT;
             return productNat;
         } else {
             return price;

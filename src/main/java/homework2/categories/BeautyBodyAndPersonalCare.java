@@ -35,7 +35,7 @@ public class BeautyBodyAndPersonalCare extends Product implements ITaxation {
     public Double calculatePrice() {
 
         if (hypoalergenic || madeForWomen) {
-            double productNat = price += FIX_AMOUNT;
+            double productNat = price + FIX_AMOUNT;
             return productNat;
 
         } else {

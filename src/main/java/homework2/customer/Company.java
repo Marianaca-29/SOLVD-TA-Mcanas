@@ -9,7 +9,7 @@ public class Company extends Customer {
 
     private Logger logger = LogManager.getLogger(Company.class.getSimpleName());
 
-    private String taxNumberId;
+    protected String taxNumberId;
 
     Product product;
 

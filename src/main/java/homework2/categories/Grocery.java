@@ -30,7 +30,7 @@ public class Grocery extends Product implements ITaxation {
     public Double calculatePrice() {
 
         if (vegan) {
-            double productNat = price += FIX_AMOUNT_VEGAN;
+            double productNat = price + FIX_AMOUNT_VEGAN;
             return productNat;
         } else {
             return price * weight;

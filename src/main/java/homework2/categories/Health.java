@@ -29,7 +29,7 @@ public class Health extends Product implements IInsurance, ITaxation {
     @Override
     public Double calculatePrice() {
         if (safety) {
-            double productSafety = price += FIX_AMOUNT_SAFETY;
+            double productSafety = price + FIX_AMOUNT_SAFETY;
             return productSafety;
         } else {
             return price;

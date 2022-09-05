@@ -14,10 +14,11 @@ import homework2.customer.Consumer;
 import homework2.exceptions.CustomerException;
 import homework2.exceptions.DateException;
 import homework2.exceptions.PriceException;
-import homework2.lambdas.StringFunction;
+import homework2.linkedlist.LinkedList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import static homework2.lambdas.StringFunction.*;
 
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class.getName());
@@ -89,47 +90,41 @@ public class Main {
         cart2.addProduct(cocacola);
         cart2.addProduct(pineapple);
         cart2.addProduct(rollerskate);
-        cart2.addProduct(gloves);
-        cart2.addProduct(goldfish);
 
 
+        // creating cart 3 and adding to list or "cart" the created products
+
+        Cart cart3 = new Cart();
+        cart3.addProduct(gloves);
+        cart3.addProduct(goldfish);
         // setting the cart the each created shop
         shop1.setCart(cart1);
         shop2.setCart(cart2);
+        shop1.setCart(cart3);
 
         // Creating customer and its details
 
         Consumer consumer1 = new Consumer("Sergei", "Zagriychuk", 1, true, 29, 10, 1990);
+        Consumer consumer2 = new Consumer("Sergei", "Zagriychuk", 1, true, 20, 11, 1992);
         Company company1 = new Company("Solvd", "inc", 2, "12345678910");
-
+        LinkedList<Consumer> consumerwithfidelityp = new LinkedList<>();
 
         //this shows the cart and it's products (product to String and sow cart)
         cart1.showCart();
         logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(consumer1));
 
         cart2.showCart();
-        logger.error("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
+        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
 
-        // linked list
-        LinkedList list = new LinkedList();
-        list = LinkedList.insert(list, "Final prices include taxes, ");
-        list = LinkedList.insert(list, "final prices include insurance, ");
-        list = LinkedList.insert(list, "Final prices do not include Packaging ");
-        LinkedList.printList(list);
+        //Printed Likedlist of Customers attended this day
+        shop1.addConsumerWF(consumerwithfidelityp, consumer1);
+        shop1.addConsumerWF(consumerwithfidelityp, consumer2);
+        logger.info(consumerwithfidelityp.getCount());
 
-
-        StringFunction asking = (s) -> s + "?";
-        StringFunction answering = (s) -> s + "!";
-        StringFunction saying = (s) -> s + "!";
-
+        //lambdas calling
         printFormatted("Is there anything you would like to add", asking);
         printFormatted("no", answering);
         printFormatted("There isn't anything you would like to add, Have a Nice Day", saying);
-    }
-
-    public static void printFormatted(String str, StringFunction format) {
-        String result = format.run(str);
-        System.out.println(result);
     }
 
 

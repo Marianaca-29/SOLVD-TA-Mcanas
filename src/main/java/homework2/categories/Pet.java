@@ -31,7 +31,7 @@ public class Pet extends Product implements IInsurance, ITaxation {
     public Double calculatePrice() {
 
         if (needsWater) {
-            double productWater = price += FIX_AMOUNT_WATER;
+            double productWater = price + FIX_AMOUNT_WATER;
             return productWater;
 
         } else {
