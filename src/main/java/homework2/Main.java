@@ -17,7 +17,6 @@ import homework2.exceptions.PriceException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static homework2.lambdas.StringFunction.*;
 
 public class Main {
     private static Logger logger = LogManager.getLogger(Main.class.getName());
@@ -109,23 +108,41 @@ public class Main {
 
 
         //this shows the cart and it's products (product to String and sow cart)
+
         cart1.showCart();
-        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(consumer1));
+        //lambdas calling
+        cart1.orderProducts();
+        //recall method to see if ordered
+        cart1.showCart();
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer1) + " and total of products is: ");
+        //streams
+        cart1.countCart();
 
         cart2.showCart();
-        logger.info("Total amount of the current cart: " + shop1.calculateAmountForCustomer(company1));
+        //lambdas calling
+        cart2.orderProducts();
+        //recall method to see if ordered
+        cart2.showCart();
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(company1) + " and total of products is: ");
+        //streams
+        cart2.countCart();
 
-        //Printed Likedlist of Customers attended this day
+        cart3.showCart();
+        //lambdas calling
+        cart3.orderProducts();
+        //recall method to see if ordered
+        cart3.showCart();
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer2) + " and total of products is: ");
+        //streams
+        cart3.countCart();
+
+        //Printed Linkedlist of Customers attended this day
         shop1.addConsumerWF(consumer1);
         shop1.addConsumerWF(consumer2);
-        logger.info(shop1.consumerwithfidelityp.getCount());
+        logger.info("The total of consumers with fidelity program is:  " + shop1.consumerwithfidelityp.getCount() + ", and the names of consumers are: ");
         shop1.displayFidelity();
-        
-        //lambdas calling
-        printFormatted(" Total amount is: ", asking);
-        printFormatted("So, will you pay with wich credit card? ", answering);
-        printFormatted("Have a Nice Day... ", saying);
-    }
 
+
+    }
 
 }

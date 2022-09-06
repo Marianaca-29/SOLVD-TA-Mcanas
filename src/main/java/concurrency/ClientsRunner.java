@@ -15,12 +15,12 @@ public class ClientsRunner {
 
     public static void main(String[] args) throws InterruptedException {
 
-        final int TPE_MAX_C = 7;
+        final int TPE_MAX_CONN = 7;
 
-        BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(TPE_MAX_C);
+        BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(TPE_MAX_CONN);
 
-        ThreadPoolExecutor executor1 = new ThreadPoolExecutor(TPE_MAX_C, TPE_MAX_C, 4, TimeUnit.SECONDS, queue);
-        for (int i = 0; i < TPE_MAX_C; i++) {
+        ThreadPoolExecutor executor1 = new ThreadPoolExecutor(TPE_MAX_CONN, TPE_MAX_CONN, 4, TimeUnit.SECONDS, queue);
+        for (int i = 0; i < TPE_MAX_CONN; i++) {
             Runnable connection = new Runnable() {
                 @Override
                 public void run() {
@@ -45,6 +45,6 @@ public class ClientsRunner {
         while (!executor1.isTerminated()) {
 
         }
-        logger.info("Finished all threads");
+        logger.info("All threads were finished... ");
     }
 }

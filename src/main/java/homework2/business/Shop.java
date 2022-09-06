@@ -25,6 +25,7 @@ public class Shop {
     }
 
     public void setCart(Cart cart) {
+
         this.cart = cart;
     }
 
@@ -40,12 +41,13 @@ public class Shop {
     }
 
     public void displayFidelity() {
-        Node<Consumer> algo = consumerwithfidelityp.head;
-        while (algo != null) {
-            logger.info(algo.getValue().getName());
-            algo = algo.getNext();
+        Node<Consumer> consNode = consumerwithfidelityp.head;
+        while (consNode != null) {
+            logger.info(consNode.getValue().getName());
+            consNode = consNode.getNext();
         }
     }
+    
 
     // method to calculate total amount of products in the cart
     public Double calculateAmountForCustomer(Customer customer) {
@@ -66,5 +68,6 @@ public class Shop {
 
 
     }
-
 }
+
+

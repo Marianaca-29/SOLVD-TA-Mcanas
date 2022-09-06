@@ -39,5 +39,14 @@ public class Cart {
         }
 
     }
-}
 
+    public void countCart() {
+        listProduct.stream().count();
+        logger.info(listProduct.stream().count());
+    }
+
+    public void orderProducts() {
+        listProduct.sort((l, r) -> l.name.compareTo(r.name));
+    }
+
+}
