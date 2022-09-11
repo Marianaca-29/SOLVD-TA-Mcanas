@@ -25,6 +25,10 @@ public class Health extends Product implements IInsurance, ITaxation {
         this.safety = safety;
     }
 
+    public Boolean getSafety() {
+        return safety;
+    }
+
     // implementing methods
     @Override
     public Double calculatePrice() {

@@ -1,6 +1,7 @@
 package homework2.business;
 
 
+import homework2.interfaces.FilterProduct;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,6 +23,7 @@ public class Cart {
 
     //getters
     public List<Product> getListProduct() {
+
         return listProduct;
     }
 
@@ -45,8 +47,13 @@ public class Cart {
         logger.info(listProduct.stream().count());
     }
 
-    public void orderProducts() {
-        listProduct.sort((l, r) -> l.name.compareTo(r.name));
-    }
+    // Added these new method, so I could use lambdas as asked
 
+    public void getFieldOfProductsBy(FilterProduct filterProduct) {
+        for (Product p : listProduct) {
+            if (filterProduct.filteringProducts(p))
+                logger.info("The selected product is: " + p.getName() + " and it's final price is " + p.getPrice());
+        }
+    }
 }
+

@@ -47,10 +47,10 @@ public class Main {
         pineapple.addTaxation(10.0);
 
         // Product 4/6 - Health -  Insurance and taxes
-        Health threadmill = new Health("threadmill", "threadmill", 10.0, 10.0, false);
+        Health threadmill = new Health("threadmill", "threadmill", 10.0, 10.0, true);
         threadmill.addInsurance(10.0, 10.0);
         threadmill.addTaxation(10.0);
-        Health rollerskate = new Health("rollerskate", "rollerskate", 0.500, 10.0, false);
+        Health rollerskate = new Health("rollerskate", "rollerskate", 0.500, 10.0, true);
         rollerskate.addInsurance(10.0, 10.0);
         rollerskate.addTaxation(10.0);
 
@@ -61,7 +61,7 @@ public class Main {
         gloves.addTaxation(10.0);
 
         // Product 6/6 - Pet -  Insurance and taxes
-        Pet dog = new Pet("dog", "dog", 500.0, 10.0, false);
+        Pet dog = new Pet("dog", "dog", 500.0, 1000.0, false);
         dog.addInsurance(10.0, 10.0);
         dog.addTaxation(10.0);
         Pet goldfish = new Pet("goldfish", "goldfish", 0.100, 10.0, false);
@@ -80,7 +80,6 @@ public class Main {
         cart1.addProduct(bread);
         cart1.addProduct(threadmill);
         cart1.addProduct(cleanser);
-        cart1.addProduct(dog);
 
         // creating cart 2 and adding to list or "cart" the created products
         Cart cart2 = new Cart();
@@ -93,8 +92,10 @@ public class Main {
         // creating cart 3 and adding to list or "cart" the created products
 
         Cart cart3 = new Cart();
+        cart3.addProduct(dog);
         cart3.addProduct(gloves);
         cart3.addProduct(goldfish);
+
         // setting the cart the each created shop
         shop1.setCart(cart1);
         shop2.setCart(cart2);
@@ -107,41 +108,53 @@ public class Main {
         Company company1 = new Company("Solvd", "inc", 2, "12345678910");
 
 
-        //this shows the cart and it's products (product to String and sow cart)
+        //this shows the cart and it's products (product to String and show cart)
 
+        // ***** Cart 1 *****
+
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer1));
         cart1.showCart();
-        //lambdas calling
-        cart1.orderProducts();
-        //recall method to see if ordered
-        cart1.showCart();
-        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer1) + " and total of products is: ");
         //streams
+        logger.info("Total of products is: ");
         cart1.countCart();
+        //Usage of lambda
+        logger.info("I want to filter by name of product, and it's name is : <<shampoo>>");
+        cart1.getFieldOfProductsBy(product -> product.getName() == "shampoo");
+        logger.info("I want to filter by price of product, and it's price under <<$ 16 >>");
+        cart1.getFieldOfProductsBy(product -> product.getPrice() < 16);
+        logger.info(" ---- End of purchase N°1 ---- ");
 
+        // ***** Cart 2 *****
+
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(company1));
         cart2.showCart();
-        //lambdas calling
-        cart2.orderProducts();
-        //recall method to see if ordered
-        cart2.showCart();
-        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(company1) + " and total of products is: ");
         //streams
+        logger.info("Total of products is: ");
         cart2.countCart();
+        //Usage of lambda
+        logger.info("I want to filter by name of product, and it's name is : <<coca cola>>");
+        cart1.getFieldOfProductsBy(product -> product.getName() == "cocacola");
+        logger.info("I want to filter by weight of product, and it's weight under << 1 oz >>");
+        cart2.getFieldOfProductsBy(product -> product.getWeight() == 1);
+        // este no funciona ver
+        logger.info(" ---- End of purchase N°2 ---- ");
+        // ***** Cart 3 *****
 
+        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer2));
         cart3.showCart();
-        //lambdas calling
-        cart3.orderProducts();
-        //recall method to see if ordered
-        cart3.showCart();
-        logger.info("Total amount of the current cart: $ " + shop1.calculateAmountForCustomer(consumer2) + " and total of products is: ");
         //streams
+        logger.info("Total of products is: ");
         cart3.countCart();
+        logger.info("I want to filter by attribute of product, and it's price over << $100 >>");
+        //Usage of lambda
+        cart3.getFieldOfProductsBy(product -> product.getPrice() > 100);
+        logger.info("---- End of purchase N°3 ----");
 
         //Printed Linkedlist of Customers attended this day
         shop1.addConsumerWF(consumer1);
         shop1.addConsumerWF(consumer2);
         logger.info("The total of consumers with fidelity program is:  " + shop1.consumerwithfidelityp.getCount() + ", and the names of consumers are: ");
         shop1.displayFidelity();
-
 
     }
 

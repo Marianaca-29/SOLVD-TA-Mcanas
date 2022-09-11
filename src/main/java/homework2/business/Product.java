@@ -28,15 +28,19 @@ public abstract class Product {
         }
     }
 
-    public Double getPrice() {
+    public String getName() {
+        return name;
+    }
 
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
-
-        this.price = price;
-    }
     // methods
     // this is the abstract method: it does not make any action
 
