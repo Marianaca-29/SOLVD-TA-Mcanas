@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 public class Beverage extends Product implements ITaxation {
 
     private Logger logger = LogManager.getLogger(Beverage.class.getSimpleName());
-    private Boolean refrigerated;
+    public Boolean refrigerated;
     private Boolean natural;
     private final static double FIX_AMOUNT = 5.0;
 

@@ -122,7 +122,13 @@ public class Main {
         cart1.getFieldOfProductsBy(product -> product.getName() == "shampoo");
         logger.info("I want to filter by price of product, and it's price under <<$ 16 >>");
         cart1.getFieldOfProductsBy(product -> product.getPrice() < 16);
+        //Usage of Streams
+        logger.info("Names printed in Uppercase: ");
+        cart1.productNamesToUpperCase();
+        logger.info("Products printed in alphabetical order: ");
+        cart1.productOrdered();
         logger.info(" ---- End of purchase N°1 ---- ");
+
 
         // ***** Cart 2 *****
 
@@ -136,7 +142,11 @@ public class Main {
         cart1.getFieldOfProductsBy(product -> product.getName() == "cocacola");
         logger.info("I want to filter by weight of product, and it's weight under << 1 oz >>");
         cart2.getFieldOfProductsBy(product -> product.getWeight() == 1);
-        // este no funciona ver
+        //Usage of Streams
+        logger.info("Names printed in Uppercase: ");
+        cart2.productNamesToUpperCase();
+        logger.info("Products printed in alphabetical order: ");
+        cart2.productOrdered();
         logger.info(" ---- End of purchase N°2 ---- ");
         // ***** Cart 3 *****
 
@@ -148,6 +158,11 @@ public class Main {
         logger.info("I want to filter by attribute of product, and it's price over << $100 >>");
         //Usage of lambda
         cart3.getFieldOfProductsBy(product -> product.getPrice() > 100);
+        //Usage of Streams
+        logger.info("Names printed in Uppercase: ");
+        cart3.productNamesToUpperCase();
+        logger.info("Products printed in alphabetical order: ");
+        cart3.productOrdered();
         logger.info("---- End of purchase N°3 ----");
 
         //Printed Linkedlist of Customers attended this day
@@ -155,6 +170,11 @@ public class Main {
         shop1.addConsumerWF(consumer2);
         logger.info("The total of consumers with fidelity program is:  " + shop1.consumerwithfidelityp.getCount() + ", and the names of consumers are: ");
         shop1.displayFidelity();
+        logger.info("Products of the store that had been purchased and have refrigeration are: ");
+        shop1.addConsumerWTN(cocacola);
+        shop1.addConsumerWTN(orangejuice);
+        //Added this logic to filter a product if it's refrigerated, given it's stored in different place (in all shop)
+        shop1.streamingRefrigerated();
 
     }
 
