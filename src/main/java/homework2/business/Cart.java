@@ -47,11 +47,12 @@ public class Cart {
     //Adding some intermediate operations
 
     public void productNamesToUpperCase() {
-        List<String> namesToUpper = new ArrayList<>();
-        for (int i = 0; i < listProduct.size(); i++) {
-            namesToUpper.add(listProduct.get(i).getName());
-        }
-        namesToUpper.stream().map(String::toUpperCase).forEach(System.out::println);
+        listProduct.stream()
+                .map(Product::getName)
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+        listProduct.stream().map(Product::getName).map(String::toUpperCase).forEach(System.out::println);
+
     }
 
     public void productOrdered() {
